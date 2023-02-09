@@ -1,0 +1,12 @@
+<div class="slideshow">
+    <div class="slideshow-buttons">
+      <div class="left">
+        <img class="slideshow-button-image" (click)="previous()" src="assets/images/ArrowLeft.png" alt="Previous">
+      </div>
+      <img [src]="images[currentIndex]" alt="Slideshow" class="imageslideshow">
+      <div class="right">
+        <img class="slideshow-button-image" (click)="next()" src="assets/images/ArrowRight.png" alt="Next">
+      </div>
+    </div>
+  </div>
+  

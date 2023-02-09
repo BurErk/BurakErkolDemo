@@ -1,0 +1,67 @@
+<div class="ourservices">
+    <div class="capiton">
+      <h1>Our Services just for <span class="you">you.</span></h1>
+    </div>
+    <div class="links-container">
+      <div class="links">
+        <a href="https://twitter.com" target="_blank">
+          <img src="./assets/images/Twitter.png" class="icon" />
+          <p>Our Twitter</p>
+        </a>
+        <a href="https://instagram.com" target="_blank">
+          <img src="./assets/images/Instagram.png" class="icon" />
+          <p>Our Instagram</p>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="boxes-container">
+    <div class="box-row" *ngFor="let boxRow of boxRows">
+      <div class="box" *ngFor="let box of boxRow; let i = index" [ngStyle]="{'background-color': i % 2 === 0 ? 'black' : 'white', 'color': i % 2 === 0 ? 'white' : 'black'}">
+          <a [routerLink]="['/home']" (mouseenter)="boxHover(i)" (mouseleave)="boxLeave(i)"> <!-- In a complete version of this component this would link into the specific pages providing services-->
+          <div class="box-content">
+            <h2 [style.color]="i % 2 === 0 ? 'white' : 'black'">{{box.title}}</h2>
+            <p [style.color]="i % 2 === 0 ? 'white' : 'black'">{{box.description}}</p>
+            <img [src]="box.image">
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="testimonials">
+    <div class="testimonialsbox">
+      <img src="./assets/images/HappyCustomer.png" class="customerimage">
+      <div class="testimonailsbox-text">
+        <h2><em>"Amazing Service!"</em></h2>
+        <p>I recently used the services provided by this company and I must say I was thoroughly impressed. The level of professionalism and attention to detail was unmatched. The service I received was top-notch and exceeded all of my expectations. I appreciate the effort they put into making sure I was completely satisfied with their work. I would highly recommend their services to anyone looking for quality and reliability. Thank you for an exceptional experience!</p>
+        <img src="./assets/images/StarRating.png" class="starrating">
+    </div>
+    </div>
+        <div class="testimonialsbox">
+      <img src="./assets/images/HappyCustomer2.png" class="customerimage">
+      <div class="testimonailsbox-text">
+        <h2><em>"Best in the Business"</em></h2>
+        <p>I recently used this company's services and was blown away. The professionalism was top-notch and they really took the time to make sure I was happy with their work. I got excellent service that exceeded my expectations and I couldn't be more grateful. I would definitely recommend them to anyone looking for quality and reliability. Thank you for a fantastic experience!</p>
+        <img src="./assets/images/StarRating.png" class="starrating">
+    </div>
+    </div>
+  </div>
+
+  <form class="contact-form" (ngSubmit)="onSubmit($event)">
+  <h2>Contact us:</h2>
+  <div class="form-group">
+    <label for="name">Name:</label>
+    <input type="text" id="name" required>
+  </div>
+  <div class="form-group">
+    <label for="email">Email:</label>
+    <input type="email" id="email" required>
+  </div>
+  <div class="form-group">
+    <label for="message">Message:</label>
+    <textarea id="message" required></textarea>
+  </div>
+  <button type="button">Send</button>
+</form>

@@ -1,0 +1,23 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .footer__left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .footer__right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .footer__right a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+  }
+  
